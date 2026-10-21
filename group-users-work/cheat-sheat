@@ -1,0 +1,116 @@
+1. What is a User?
+A user is a person or account that can log in to Linux.
+Examples:
+•	root (administrator) 
+•	ali 
+•	zeeshan 
+Check your current user:
+whoami
+Example output:
+zeeshan
+________________________________________
+2. What is a Group?
+A group is a collection of users.
+Example:
+Suppose a company has three employees:
+Ali
+Ahmed
+Zeeshan
+Create a group called:
+developers
+Add all three users to it.
+Now instead of giving permissions to each user separately, you can give permissions to the developers group.
+________________________________________
+Simple Real-Life Example
+Imagine a classroom:
+•	Students = Users 
+•	Class = Group 
+If the teacher gives a book to the whole class, every student in that class can use it.
+________________________________________
+Check Current User
+whoami
+________________________________________
+Check User ID and Groups
+id
+Example:
+uid=1000(zeeshan) gid=1000(zeeshan) groups=1000(zeeshan),27(sudo)
+________________________________________
+See All Users
+cat /etc/passwd
+________________________________________
+See All Groups
+cat /etc/group
+________________________________________
+Create a New User
+sudo useradd ali
+Set password:
+sudo passwd ali
+________________________________________
+Create a New Group
+sudo groupadd developers
+________________________________________
+Add User to a Group
+sudo usermod -aG developers ali
+Explanation:
+•	-a = append 
+•	-G = supplementary group 
+________________________________________
+Check User's Groups
+groups ali
+Example:
+ali : ali developers
+________________________________________
+Remove User from a Group
+sudo gpasswd -d ali developers
+________________________________________
+Change File Owner
+sudo chown ali file.txt
+________________________________________
+Change File Group
+sudo chgrp developers file.txt
+________________________________________
+Check File Owner and Group
+ls -l file.txt
+Example:
+-rw-r--r-- 1 ali developers 100 Jun 4 file.txt
+Here:
+•	Owner = ali 
+•	Group = developers 
+________________________________________
+Delete a User
+sudo userdel ali
+Delete user and home directory:
+sudo userdel -r ali
+________________________________________
+Delete a Group
+sudo groupdel developers
+________________________________________
+Important Files
+File	Purpose
+/etc/passwd	User information
+/etc/shadow	Encrypted passwords
+/etc/group	Group information
+________________________________________
+Most Important Commands for Exams and Practice
+Command	Purpose
+whoami	Show current user
+id	Show user ID and groups
+groups	Show groups
+useradd username	Create user
+passwd username	Set password
+userdel username	Delete user
+groupadd groupname	Create group
+groupdel groupname	Delete group
+usermod -aG group user	Add user to group
+gpasswd -d user group	Remove user from group
+chown	Change owner
+chgrp	Change group
+ls -l	View owner and group of files
+Easy Memory Trick
+•	User = One person/account. 
+•	Group = Collection of users. 
+•	chown = Change Owner. 
+•	chgrp = Change Group. 
+•	chmod = Change Permissions. 
+
+

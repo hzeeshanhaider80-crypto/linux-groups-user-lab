@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Linux Users and Groups Management 
  Overview
 
@@ -49,3 +50,7 @@ chmod: Changes file permissions.
 Build practical Linux administration skills through daily terminal practice.
 
 
+=======
+# linux-groups-user-lab
+this directory contain all about user &amp;groups
+>>>>>>> e1bed31b16ab84c0cf48f7835bc96939731ab511
